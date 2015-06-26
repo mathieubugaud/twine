@@ -140,7 +140,17 @@ module Twine
                   if comment && comment.length > 0
                     f.puts "\t<!-- #{comment} -->\n"
                   end
-                  f.puts "\t<string name=\"#{key}\">#{value}</string>"
+                  
+                  # MBU handle %02d-like values
+                  if value.include? "%02d"
+                    f.puts "\t<string formatted=\"false\" name=\"#{key}\">#{value}</string>"
+                  else
+                    f.puts "\t<string name=\"#{key}\">#{value}</string>"
+                  end
+
+                  # ORIGINAL 
+                  # f.puts "\t<string name=\"#{key}\">#{value}</string>"
+                  
                 end
               end
             end
