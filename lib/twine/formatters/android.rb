@@ -10,8 +10,6 @@ module Twine
       DEFAULT_FILE_NAME = 'strings.xml'
       LANG_CODES = Hash[
         'zh' => 'zh-Hans',
-        'zh-rCN' => 'zh-Hans',
-        'zh-rHK' => 'zh-Hant',
         'in' => 'id',
         'nb' => 'no'
         # TODO: spanish
